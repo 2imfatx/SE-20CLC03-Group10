@@ -6,6 +6,7 @@
     --black:#2c2c54;
     --orange:#e17055;
     --grey:#718093;
+    --yellow:#ffeaa7;
     --widthImg:100px;
     --heightImg:100px;
 }
@@ -37,15 +38,27 @@ html{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding:2rem 9%;
+    padding:1rem 9%;
     box-shadow: 0 .5rem 1rem rgba(0,0, 0, .1);
     position: relative;
     font-size: 1.25rem;
 }
 
+
+
+.header-1 .logo img{
+    width: 100px;
+    height: 100px;
+}
+
 .header-1 .logo{
+    display: inline-block;
+}
+
+.header-1 .Tool{
+    display: inline-block;
     position: relative;
-    
+    bottom: 5rem;
 }
 
 
@@ -99,7 +112,8 @@ html{
 } */
 
 .P1{
-    background:var(--orange);
+    background:var(--yellow);
+    border: solid;
 }
 
 .P2{
@@ -110,7 +124,8 @@ html{
 
 .P3
 {
-    background:white;
+    background:var(--yellow);
+    border: solid;
 }
 
 .foodImg{
@@ -181,7 +196,8 @@ img{
 
 .P2SignIn{
     height: 15vh;
-    background: var(--grey);
+    background:var(--yellow);
+    border: solid;
 }
 
 .logoDiv{
@@ -218,5 +234,6 @@ img{
 
 .P2SignUp{
     height: 15vh;
-    background: var(--grey);
+    background:var(--yellow);
+    border: solid;
 }
