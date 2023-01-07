@@ -237,3 +237,39 @@ img{
     background:var(--yellow);
     border: solid;
 }
+
+
+
+.orderBody{
+    padding: 4rem 20% 15px 20%;
+}
+
+.informationOrder h2{
+    font-size: 40px;
+}
+
+.informationOrder input[type=text] {
+    width: 100%;
+    margin-bottom: 12px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.informationOrder .name{
+    display: flex;
+    justify-content: space-between;
+}
+.informationOrder .firstname{
+    display: flex;
+    width: 43%;
+}
+.informationOrder .lastname{
+    display: flex;
+    width: 55%;
+}
+
+
+.totalOrder h2{
+    font-size: 40px;
+}
