@@ -175,7 +175,7 @@ html{
 .aboutUs{
     text-align: center;
     font-size: 30px  ;
-
+}
 .aboutUs2{
     display: flex;
     align-items: center;
@@ -188,6 +188,10 @@ html{
     list-style: none;
 }
 
+.aboutUs2 img{
+    width: 188px;
+    height: 133px;
+}
 
 .P2 .categories .box-container .box .btn{
     outline-style: solid;
@@ -258,6 +262,7 @@ html{
 .orderBody{
     padding: 4rem 20% 15px 20%;
     background: white;
+}
 
 
 .informationOrder h2{
@@ -285,17 +290,20 @@ html{
     width: 55%;
 }
 
-
+img {
+    width: 250px;
+    height: 250px;
+}
 .totalOrder h2{
     font-size: 40px;
 }
 .icons{
     scale: 200%;   
 }
+
 .listOrder{
     width: 100%;
-    height: auto;
-    max-height: 300px;
+    height: 250px;
     background-color: #f2f2f2;
     padding: 1rem 20px 15px 20px;
     border: 1px solid lightgrey;
@@ -309,7 +317,8 @@ html{
     align-items: center;
     justify-content: space-between;
     padding-bottom: 1rem;
-    background: #fefce0;
+    background: white;
+
 }
 
 #productOrder img{
@@ -320,7 +329,6 @@ html{
     padding: 1rem;
     font-size: 15px;
 }
-
 #productOrder input[type=number] {
     width: 100%;
     margin-bottom: 12px;
@@ -329,7 +337,6 @@ html{
     border-radius: 3px;
     font-size: 1.5rem;
 }
-
 #productOrder button{
     background-color: var(--red);
     font-size: 14px;
@@ -379,11 +386,13 @@ td:last-child{
     text-align: right;
 }
 th{
+
     text-align: center;
     padding: 5px;
     color: #fff;
     background: #ff523b;
     font-weight: normal;
+
 }
 td{
     padding: 10px 5px;
