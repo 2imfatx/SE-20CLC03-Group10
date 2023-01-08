@@ -2,6 +2,7 @@
 
 /* như là khai báo toàn cục */
 :root{
+    --red: #e74c3c;
     --green:#27ae60;
     --black:#2c2c54;
     --orange:#e17055;
@@ -174,7 +175,6 @@ html{
 .aboutUs{
     text-align: center;
     font-size: 30px  ;
-}
 
 .aboutUs2{
     display: flex;
@@ -254,10 +254,11 @@ html{
     background:var(--yellow);
     border: solid;
 }
+
 .orderBody{
     padding: 4rem 20% 15px 20%;
     background: white;
-}
+
 
 .informationOrder h2{
     font-size: 40px;
@@ -319,6 +320,7 @@ html{
     padding: 1rem;
     font-size: 15px;
 }
+
 #productOrder input[type=number] {
     width: 100%;
     margin-bottom: 12px;
@@ -327,7 +329,6 @@ html{
     border-radius: 3px;
     font-size: 1.5rem;
 }
-
 
 #productOrder button{
     background-color: var(--red);
@@ -352,6 +353,7 @@ html{
     font-size: 14px;
     padding-bottom: 1rem;
 }
+
 .footer hr{
     border: none;
     background-color: #555;
