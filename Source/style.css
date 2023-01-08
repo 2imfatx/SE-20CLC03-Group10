@@ -48,8 +48,8 @@ html{
 
 
 .header-1 .logo img{
-    width: 100px;
-    height: 100px;
+    width: 188px;
+    height: 133px;
 }
 
 .header-1 .logo{
@@ -121,8 +121,15 @@ html{
     background:whitesmoke;
     padding-right: 10rem;
     padding-left: 10rem;
+    padding-bottom: 10rem;
 }
-
+.P2 #foodCategories{
+    text-align: center;
+    padding:2rem 0;
+    padding-bottom: 3rem;
+    font-size: 2rem;
+    color: var(--black);
+}
 .P3
 {
     background:var(--yellow);
@@ -164,26 +171,26 @@ html{
     box-shadow: 1px 1px 10px 4px var(-green);
 }
 
-img{
-    width: 250px;
-    height: 250px;
-}
 
 .aboutUs{
-    padding: 1rem 0 1rem 0;
     text-align: center;
     font-size: 30px  ;
 }
-
 .aboutUs2{
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 2rem;
     font-size: 20px;
+    padding-bottom: 4rem;
 }
 .aboutUs2 ul li{
     list-style: none;
+}
+
+.aboutUs2 img{
+    width: 188px;
+    height: 133px;
 }
 
 .P2 .categories .box-container .box .btn{
@@ -252,11 +259,11 @@ img{
     border: solid;
 }
 
-
-
 .orderBody{
     padding: 4rem 20% 15px 20%;
+    background: white;
 }
+
 
 .informationOrder h2{
     font-size: 40px;
@@ -266,7 +273,7 @@ img{
     width: 100%;
     margin-bottom: 12px;
     padding: 12px;
-    border: 1px solid #ccc;
+    border: 1px solid rgb(0, 0, 0);
     border-radius: 3px;
 }
 
@@ -283,14 +290,20 @@ img{
     width: 55%;
 }
 
-
+img {
+    width: 250px;
+    height: 250px;
+}
 .totalOrder h2{
     font-size: 40px;
+}
+.icons{
+    scale: 200%;   
 }
 
 .listOrder{
     width: 100%;
-    height: 140px;
+    height: 250px;
     background-color: #f2f2f2;
     padding: 1rem 20px 15px 20px;
     border: 1px solid lightgrey;
@@ -304,6 +317,8 @@ img{
     align-items: center;
     justify-content: space-between;
     padding-bottom: 1rem;
+    background: white;
+
 }
 
 #productOrder img{
@@ -314,7 +329,14 @@ img{
     padding: 1rem;
     font-size: 15px;
 }
-
+#productOrder input[type=number] {
+    width: 100%;
+    margin-bottom: 12px;
+    padding: 9px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 3px;
+    font-size: 1.5rem;
+}
 #productOrder button{
     background-color: var(--red);
     font-size: 14px;
@@ -339,3 +361,61 @@ img{
     padding-bottom: 1rem;
 }
 
+.footer hr{
+    border: none;
+    background-color: #555;
+    height: 1px;
+    margin: 20px 0;
+}
+/*--------*/
+.copyright{
+    text-align: center;
+    font-size: 14px;
+    font-weight: 16px;
+}
+#btn{
+
+    background:rgb(228, 68, 68) ;
+    color:rgb(255, 255, 255);
+    font-size: 24px;
+    float: right;
+    padding: 10px 20px;
+    border-radius: 7px;
+}
+td:last-child{
+    text-align: right;
+}
+th{
+
+    text-align: center;
+    padding: 5px;
+    color: #fff;
+    background: #ff523b;
+    font-weight: normal;
+
+}
+td{
+    padding: 10px 5px;
+}
+.total-price{
+    padding-top: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+.total-price table{
+    border-top: 3px solid #ff523b;
+    width: 100%;
+    max-width: 500px;
+    font-size: 20px;
+}
+.cart-page{
+    margin: 80px auto;
+    padding-left:20rem ;
+    padding-right:20rem ;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+}
+/*--------*/
