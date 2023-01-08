@@ -2,11 +2,82 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <title>Cart</title>
 </head>
 <body>
+    <!--header-->
+    <div class="header">
+        <div class="container">
     
+            <div class="navbar">
+                <div class="logo">
+                    <img src="logo.jpg" width="200px">
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Trang chủ</a></li>
+                        <li><a href="">Trở thành người bán</a></li>
+                        <li><a href="">Liên hệ</a></li>
+                        <li><a href="">Thông tin nhóm</a></li>
+                    </ul>
+                </nav>
+                <div class="icons">
+                    <a href="order.html" class="fas fa-shopping-cart"></a>
+                    <a href="signIn.html" class="fas fa-user-circle"></a>
+                    <a href="#"></a>
+                </div>
+            </div>  
+        </div>
+    </div>
+    <!--cart items details-->
+    <div class="small-container cart-page">
+        <table>
+            <tr>
+                <th>Product</th>
+                <th>Quanlity</th>
+                <th>Subtotal</th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="cart-info">
+                        <img src="banhMi.jpg">
+                        <div>
+                            <p>Banh Mi Ngon</p>
+                            <small>Price: $50</small>
+                            <br>
+                            <a href="">Remove</a>  
+                        </div>
+                    </div>
+
+
+                </td>
+                <td><input type="Number" value="1"></td>
+                <td>$50</td>
+
+            </tr>
+        </table>
+    </div>
+    <!--footer-->
+    <div class="footer">
+        <div class="container">
+            <div class="navbar">
+                <nav>
+                    <ul>
+                        <li><a href="">Trang chủ</a></li>
+                        <li><a href="">Liên hệ</a></li>
+                        <li><a href="">Thông tin nhóm</a></li>
+                    </ul>
+                </nav>
+            </div>  
+        </div>
+        <hr>
+        <p>
+            <div class="copyright">Copyright 2022 - F&P company</div>
+        </p>
+    </div>
+
+
 </body>
 </html>
