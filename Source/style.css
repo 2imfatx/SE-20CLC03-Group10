@@ -474,3 +474,12 @@ table{
 #sellingFood img{
     scale: 50%;
 }
+#sellingFood button{
+    background-color: var(--red);
+    font-size: 14px;
+    text-align: center;
+    padding: 1rem 1rem 1rem 1rem;
+    border-radius: 15px;
+    margin-left:auto;
+}
+

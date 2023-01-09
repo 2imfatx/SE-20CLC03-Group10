@@ -12,7 +12,7 @@ function displayItems()
     ComGaData.map(item=>{
 
         var itemCard=document.createElement('div')
-        itemCard.setAttribute('id','productOrder');
+        itemCard.setAttribute('id','sellingFood');
 
         var itemImg=document.createElement('img')
         itemImg.src=item.img;
@@ -33,27 +33,9 @@ function displayItems()
 
         var itemPrice=document.createElement('p')
         itemPrice.textContent="Giá cả: " +item.price;
-        
-        const quanlityDiv = document.createElement('div');
-
-        const quantityInput = document.createElement('input');
-        quantityInput.type = 'number';
-        quantityInput.min = '1';
-        console.log(parseInt(quantityInput.value));
-        console.log(parseInt(item.price));
-
-        const subToTalDiv = document.createElement('div');
-
-        const totalParagraph = document.createElement('p');
-        totalParagraph.textContent = parseInt(quantityInput.value)*parseInt(item.price) + parseInt(item.price);
-
-
-        const buttonlDiv = document.createElement('div');
 
         const Button = document.createElement('button');
         Button.textContent = ' Thêm vào giỏ hàng';
-
-
 
         itemCard.appendChild(itemImg)
         itemCard.appendChild(inforDiv)
@@ -63,20 +45,9 @@ function displayItems()
         inforDiv.appendChild(itemRating)
         inforDiv.appendChild(itemPrice)
 
-        quanlityDiv.appendChild(quantityInput);
-        itemCard.appendChild(quanlityDiv);
-
-        subToTalDiv.appendChild(totalParagraph);
-        itemCard.appendChild(subToTalDiv);
-
-        buttonlDiv.appendChild(Button);
-        itemCard.appendChild(buttonlDiv);
-
+        itemCard.appendChild(Button);
 
         ComGa.appendChild(itemCard)
-
-
-
     })
 
 }
