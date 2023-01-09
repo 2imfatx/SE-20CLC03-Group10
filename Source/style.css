@@ -421,3 +421,59 @@ table{
     font-size: 16px;
 }
 /*--------*/
+
+.shopBody{
+    padding: 4rem 20% 15px 20%;
+    background: white;
+}
+.foodDescription{
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    padding-right: 5rem;
+}
+
+.searchBox input[type=text] {
+    width: 95%;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 3px;
+
+}
+
+.searchBox button{
+    resize: both;
+    background-color: white;
+    padding-right: 1rem;
+}
+
+.searchBox{
+    display: flex;
+    justify-content: space-between;
+}
+
+.foodDescription img{
+    scale:  50%;
+}
+
+#storeList {
+    height: 400px;
+}
+
+#sellingFood{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: start;
+    background: white;
+    font-size: 14px;
+    height: 150px;
+    padding-right: 5rem;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 7px;
+     margin-bottom: 1rem;
+}
+#sellingFood img{
+    scale: 50%;
+}
