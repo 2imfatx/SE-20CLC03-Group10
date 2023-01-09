@@ -174,14 +174,14 @@ html{
 
 .aboutUs{
     text-align: center;
-    font-size: 30px  ;
+    font-size: 15px  ;
 }
 .aboutUs2{
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 2rem;
-    font-size: 20px;
+    font-size: 15px;
     padding-bottom: 4rem;
 }
 .aboutUs2 ul li{
@@ -304,7 +304,6 @@ img {
 .listOrder{
     width: 100%;
     height: 250px;
-    background-color: #f2f2f2;
     padding: 1rem 20px 15px 20px;
     border: 1px solid lightgrey;
     border-radius: 3px;
