@@ -230,7 +230,6 @@ html{
     border: solid;
     padding: 30px 35px 35px 35px;
 }
-
 .assistance{
     padding-top: 5rem;
     font-size: 13px;
@@ -257,6 +256,10 @@ html{
     height: 15vh;
     background:var(--yellow);
     border: solid;
+}
+.assistanceSU{
+    padding-top: 1rem;
+    font-size: 13px;
 }
 
 .orderBody{
