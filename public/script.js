@@ -1,11 +1,15 @@
 // const {foodItem} = require('./index.js');
 
+
+
 function displayItems() {
     const xhr = new XMLHttpRequest();
     const url = 'http://localhost:3000/api/ComGa';
     xhr.open("GET", url);
     xhr.send();
     var ComGaStore=[];
+    var cartData=[];
+    
     xhr.onreadystatechange = (e) => {
         var res=xhr.responseText; 
 
@@ -19,7 +23,6 @@ function displayItems() {
         var ComGa=document.getElementById('ComGa')
 
         const ComGaData=ComGaStore;
-
         ComGaData.map(item=>{
     
             var itemCard=document.createElement('div');
@@ -47,7 +50,8 @@ function displayItems() {
     
             var Button = document.createElement('button');
             Button.setAttribute('class','addToCart');
-            Button.textContent = ' Thêm vào giỏ hàng';
+            Button.textContent = 'Thêm vào giỏ hàng';
+            Button.addEventListener('click', addToCart);
     
             itemCard.appendChild(itemImg);
             itemCard.appendChild(inforDiv);
@@ -62,69 +66,30 @@ function displayItems() {
             ComGa.appendChild(itemCard);
         })
         
+        function addToCart(){
+            const nameElement = this.parentNode.querySelector('p:first-child');
+            const itemName = nameElement.textContent;
         
+            var itemObj = ComGaStore.find(element=>element.StoreName==itemName);
+            var existingItem = cartData.find(element => element.StoreName == itemName);
+            if (existingItem){
+                existingItem.quantity += 1;
+            } else {
+                itemObj.quantity = 1;
+                cartData.push(itemObj);
+            }
+            cartData.totalPrice = cartData.reduce((acc, item) => acc + item.Price * item.quantity, 0);
+            console.log(cartData);
+            cartData.totalPrice += itemObj.Price; //update the total price
+            localStorage.setItem('cart', JSON.stringify(cartData));
+        }
     
     }
-  
-   
-    // var ComGa=document.getElementById('ComGa');
-
-    // var itemCard=document.createElement('div')
-    // itemCard.setAttribute('id','sellingFood');
-
-    // var itemImg=document.createElement('img')
-    // itemImg.src=res.ImageStore;
-
-    // const inforDiv = document.createElement('div');
-
-    // var itemName=document.createElement('p')
-    // itemName.textContent = res.StoreName;
-
-    // var itemAddr=document.createElement('p')
-    // itemAddr.textContent="Địa chỉ: " + res.Adrss;
-
-    // var itemDesc=document.createElement('p')
-    // itemDesc.textContent="Mô tả: " +res.Descriptions;
-
-    // var itemRating=document.createElement('p')
-    // itemRating.textContent="Đánh giá: " +res.Rating;
-
-    // var itemPrice=document.createElement('p')
-    // itemPrice.textContent="Giá cả: " +res.Price;
-
-    // const Button = document.createElement('button');
-    // Button.textContent = ' Thêm vào giỏ hàng';
-
-    // itemCard.appendChild(itemImg)
-    // itemCard.appendChild(inforDiv)
-    // inforDiv.appendChild(itemName)
-    // inforDiv.appendChild(itemAddr)
-    // inforDiv.appendChild(itemDesc)
-    // inforDiv.appendChild(itemRating)
-    // inforDiv.appendChild(itemPrice)
-
-    // itemCard.appendChild(Button);
-
-    // ComGa.appendChild(itemCard)
 
 
    
 }
 displayItems();
 
-document.querySelectorAll('.addToCart').forEach(item => {
-    item.addEventListener('click',()=>console.log(3));
-});
 
-const cartData=[];
 
-function addToCart(){
-    console.log(this);
-    const nameElement = this.parentNode.querySelector('p:first-child');
-    const itemName = nameElement.textContent;
-
-    var itemObj = foodItem.find(element=>element.name==itemName);
-    cartData.push(itemObj);
-    console.log(cartData);
-
-}

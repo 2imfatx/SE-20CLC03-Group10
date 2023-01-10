@@ -16,7 +16,7 @@ const connection = mysql.createConnection({
     host:'localhost',
     database:'shopaa',
     user:'root',
-    password:'leanhvinh0901.'
+    password:'Phat0962127332'
 });
 
 // Connect to the database
