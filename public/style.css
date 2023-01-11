@@ -464,7 +464,7 @@ table {
 }
 
 .searchBox input[type=text] {
-    width: 90%;
+    width: 83%;
     margin-bottom: 20px;
     padding: 12px;
     border: 1px solid rgb(0, 0, 0);
@@ -576,4 +576,17 @@ button#deleteItem {
 .assistanceSU{
     font-size: 15px;
     padding-bottom: 1.5rem;
+}
+
+
+#sortButton{
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 3px;
+    color: #c23616;
+}
+#sortButton:hover {
+    background-color: var(--grey);
+    color: black    ;
 }
