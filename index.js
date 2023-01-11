@@ -21,7 +21,7 @@ app.get('/store',function(req,res){
 })
 
 app.get('/api/ComGa', function(req, res) {
-    
+
     let sql="SELECT * FROM STORE WHERE FOODNAME='Cơm gà'";
     connection.query(sql,function(err,results){
         if(err) throw err;
@@ -57,6 +57,3 @@ app.get('/api/BunBoHue', function(req, res) {
 app.listen(3000,function(){
     console.log("App listening on port 3000");
 })
-
-
-module.exports = foodItem;

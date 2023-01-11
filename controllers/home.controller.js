@@ -1,6 +1,3 @@
-
-
-
 exports.home = function (req, res) {
     res.sendFile(__dirname.replace('controllers', '') + '/index.html');
 }
@@ -38,4 +35,3 @@ exports.bunBoHue =function(req,res){
 exports.signIn =function(req,res){
     res.sendFile(__dirname.replace('controllers', 'public') + '/signIn.html');
 }
-
