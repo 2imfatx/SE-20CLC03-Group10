@@ -1,25 +1,25 @@
 
 function displayItems() {
     const xhr = new XMLHttpRequest();
-    const url = 'http://localhost:3000/api/BunThitNuong';
+    const url = 'http://localhost:3000/api/BanhXeo';
     xhr.open("GET", url);
     xhr.send();
-    var BunThitNuongStore=[];
+    var BanhXeoStore=[];
     xhr.onreadystatechange = (e) => {
         var res=xhr.responseText; 
 
         try{
-            BunThitNuongStore = JSON.parse(res);
-            // console.log(BunThitNuongStore);          
+            BanhXeoStore = JSON.parse(res);
+            // console.log(BanhXeoStore);          
         }catch(err){
             console.log(err);
         }
        
-        var BunThitNuong=document.getElementById('BunThitNuong')
+        var BanhXeo=document.getElementById('BanhXeo')
 
-        const BunThitNuongData=BunThitNuongStore;
+        const BanhXeoData=BanhXeoStore;
 
-        BunThitNuongData.map(item=>{
+        BanhXeoData.map(item=>{
     
             var itemCard=document.createElement('div');
             itemCard.setAttribute('id','sellingFood');
@@ -58,7 +58,7 @@ function displayItems() {
     
             itemCard.appendChild(Button);
     
-            BunThitNuong.appendChild(itemCard);
+            BanhXeo.appendChild(itemCard);
         })   
     }
 }

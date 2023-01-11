@@ -2,14 +2,15 @@ var cartData = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('c
 
 
 function displayItems() {
-    var totalPrice = 0;
-    var cart = document.getElementById('order')
+
+    if(cartData.length===0)alert("Giỏ hàng rỗng");
+    var cart = document.getElementById('cart')
 
     var CartData = cartData;
     CartData.map(item => {
 
         var itemCard = document.createElement('div');
-        itemCard.setAttribute('id', 'productOrder');
+        itemCard.setAttribute('id', 'sellingFood');
 
         var itemImg = document.createElement('img');
         itemImg.src = item.ImageStore;
@@ -27,20 +28,19 @@ function displayItems() {
         var incrementButton = document.createElement('button');
         incrementButton.innerHTML = " + ";
         incrementButton.addEventListener("click", () => {
-            item.quantity++;
+            item.quantity ++;
             itemQuantity.textContent = item.quantity;
             localStorage.setItem('cart', JSON.stringify(cartData));
-            itemSubToTal.textContent = item.Price * item.quantity;
+            itemSubToTal.textContent = item.Price*item.quantity;
             SubToTalDiv.removeChild(itemSubToTal);
             SubToTalDiv.appendChild(itemSubToTal);
-            // var totalPrice = 0;
-            totalPrice = 0
-            for (let i = 0; i < cartData.length; i++) {
-                totalPrice = totalPrice + cartData.map((item) => item.Price)[i] * cartData.map((item) => item.quantity)[i];
-            }
-
-            var total = document.getElementById('subToTal')
-            total.textContent = "TỔNG CỘNG GIÁ TRỊ SẢN PHẨM: " + totalPrice + ' VNĐ';
+            var totalPrice=0;
+        for (let i = 0; i < cartData.length; i++) {
+            totalPrice=totalPrice + cartData.map((item) => item.Price)[i]*cartData.map((item) => item.quantity)[i];
+          }
+        
+        var total = document.getElementById('total')
+        total.textContent = totalPrice + ' VNĐ';
         });
         var decrementButton = document.createElement('button');
         decrementButton.innerHTML = " - ";
@@ -51,37 +51,36 @@ function displayItems() {
                 if (item.quantity === 0) {
                     cart.removeChild(itemCard);
                     cartData = cartData.filter((item) => item.quantity !== 0);
-                }
+                }  
                 localStorage.setItem('cart', JSON.stringify(cartData));
             }
-            itemSubToTal.textContent = item.Price * item.quantity;
+            itemSubToTal.textContent = item.Price*item.quantity;
             SubToTalDiv.removeChild(itemSubToTal);
             SubToTalDiv.appendChild(itemSubToTal);
-            // var totalPrice = 0;
-            totalPrice = 0
-            for (let i = 0; i < cartData.length; i++) {
-                totalPrice = totalPrice + cartData.map((item) => item.Price)[i] * cartData.map((item) => item.quantity)[i];
-            }
-
-            var total = document.getElementById('subToTal')
-            total.textContent = "TỔNG CỘNG GIÁ TRỊ SẢN PHẨM: " + totalPrice + ' VNĐ';
+            var totalPrice=0;
+        for (let i = 0; i < cartData.length; i++) {
+            totalPrice=totalPrice + cartData.map((item) => item.Price)[i]*cartData.map((item) => item.quantity)[i];
+          }
+        
+        var total = document.getElementById('total')
+        total.textContent = totalPrice + ' VNĐ';
         });
-
+        
         const SubToTalDiv = document.createElement('div');
         var itemSubToTal = document.createElement('p1');
-        itemSubToTal.textContent = item.Price * item.quantity;
-
+        itemSubToTal.textContent = item.Price*item.quantity;
+        
         var Button = document.createElement('button');
-        Button.setAttribute('id', 'deleteItem');
+        Button.setAttribute('id','deleteItem');
         Button.textContent = 'Xóa sản phẩm';
 
-        totalPrice = 0
+        var totalPrice=0;
         for (let i = 0; i < cartData.length; i++) {
-            totalPrice = totalPrice + cartData.map((item) => item.Price)[i] * cartData.map((item) => item.quantity)[i];
-        }
-
-        var total = document.getElementById('subToTal')
-        total.textContent = "TỔNG CỘNG GIÁ TRỊ SẢN PHẨM: " + totalPrice + ' VNĐ';
+            totalPrice=totalPrice + cartData.map((item) => item.Price)[i]*cartData.map((item) => item.quantity)[i];
+          }
+        
+        var total = document.getElementById('total')
+        total.textContent = totalPrice + ' VNĐ';
 
 
 
@@ -101,18 +100,7 @@ function displayItems() {
 
         cart.appendChild(itemCard);
 
-        var submit = document.getElementById('submit');
-        submit.addEventListener("click", () => {
-            
-            alert("Đặt hàng thành công - Kết thúc sản phẩm demo cảm ơn đã xem");
-            resetLocalStorage()
-        });
     })
-
 }
 displayItems();
 
-function resetLocalStorage() {
-    localStorage.clear();
-    location.reload();
-}
