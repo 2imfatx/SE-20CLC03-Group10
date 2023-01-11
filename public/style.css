@@ -442,7 +442,7 @@ table {
 
 /*--------*/
 
-.shopBody {
+.storeBody {
     padding: 4rem 20% 15px 20%;
     background: white;
 }
@@ -500,7 +500,7 @@ table {
     scale: 50%;
 }
 
-#sellingFood button {
+.storeBody #sellingFood button {
     background-color: var(--red);
     font-size: 14px;
     text-align: center;
@@ -509,15 +509,6 @@ table {
     margin-left: auto;
 }
 
-#sellingFood button {
-    background-color: var(--red);
-    font-size: 14px;
-    text-align: center;
-    padding: 1rem 1rem 1rem 1rem;
-    border-radius: 15px;
-    margin-left: auto;
-}
-
-#sellingFood button:hover {
+.storeBody #sellingFood button:hover {
     background-color: #FFA07A;
 }

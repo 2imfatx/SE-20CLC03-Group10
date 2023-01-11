@@ -1,5 +1,5 @@
 // const {foodItem} = require('./index.js');
-
+const cartData = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : []
 
 
 function displayItems() {
@@ -8,7 +8,7 @@ function displayItems() {
     xhr.open("GET", url);
     xhr.send();
     var ComGaStore=[];
-    var cartData=[];
+    //var cartData=[];
     
     xhr.onreadystatechange = (e) => {
         var res=xhr.responseText; 
@@ -80,7 +80,6 @@ function displayItems() {
             }
             
             console.log(cartData);
-            //delete calcTotalPrice here
             localStorage.setItem('cart', JSON.stringify(cartData));
         }
     
