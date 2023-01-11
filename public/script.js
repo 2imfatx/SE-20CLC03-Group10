@@ -78,9 +78,9 @@ function displayItems() {
                 itemObj.quantity = 1;
                 cartData.push(itemObj);
             }
-            cartData.totalPrice = cartData.reduce((acc, item) => acc + item.Price * item.quantity, 0);
+            
             console.log(cartData);
-            cartData.totalPrice += itemObj.Price; //update the total price
+            //delete calcTotalPrice here
             localStorage.setItem('cart', JSON.stringify(cartData));
         }
     
