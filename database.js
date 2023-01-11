@@ -14,7 +14,7 @@ const mysql = require('mysql2');
 // Create the connection
 const connection = mysql.createConnection({
     host:'localhost',
-    database:'new_schema',
+    database:'shopaa',
     user:'root',
     password:'123456'
 });

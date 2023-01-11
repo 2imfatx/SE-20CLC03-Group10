@@ -3,13 +3,13 @@ var cartData = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('c
 
 function displayItems() {
 
-    var cart = document.getElementById('cart')
+    var cart = document.getElementById('order')
 
     var CartData = cartData;
     CartData.map(item => {
 
         var itemCard = document.createElement('div');
-        itemCard.setAttribute('id', 'sellingFood');
+        itemCard.setAttribute('id', 'productOrder');
 
         var itemImg = document.createElement('img');
         itemImg.src = item.ImageStore;
@@ -27,19 +27,19 @@ function displayItems() {
         var incrementButton = document.createElement('button');
         incrementButton.innerHTML = " + ";
         incrementButton.addEventListener("click", () => {
-            item.quantity ++;
+            item.quantity++;
             itemQuantity.textContent = item.quantity;
             localStorage.setItem('cart', JSON.stringify(cartData));
-            itemSubToTal.textContent = item.Price*item.quantity;
+            itemSubToTal.textContent = item.Price * item.quantity;
             SubToTalDiv.removeChild(itemSubToTal);
             SubToTalDiv.appendChild(itemSubToTal);
-            var totalPrice=0;
-        for (let i = 0; i < cartData.length; i++) {
-            totalPrice=totalPrice + cartData.map((item) => item.Price)[i]*cartData.map((item) => item.quantity)[i];
-          }
-        
-        var total = document.getElementById('total')
-        total.textContent = totalPrice + ' VNĐ';
+            var totalPrice = 0;
+            for (let i = 0; i < cartData.length; i++) {
+                totalPrice = totalPrice + cartData.map((item) => item.Price)[i] * cartData.map((item) => item.quantity)[i];
+            }
+
+            var total = document.getElementById('subToTal')
+            total.textContent = "TỔNG CỘNG GIÁ TRỊ SẢN PHẨM: " + totalPrice + ' VNĐ';
         });
         var decrementButton = document.createElement('button');
         decrementButton.innerHTML = " - ";
@@ -50,36 +50,36 @@ function displayItems() {
                 if (item.quantity === 0) {
                     cart.removeChild(itemCard);
                     cartData = cartData.filter((item) => item.quantity !== 0);
-                }  
+                }
                 localStorage.setItem('cart', JSON.stringify(cartData));
             }
-            itemSubToTal.textContent = item.Price*item.quantity;
+            itemSubToTal.textContent = item.Price * item.quantity;
             SubToTalDiv.removeChild(itemSubToTal);
             SubToTalDiv.appendChild(itemSubToTal);
-            var totalPrice=0;
-        for (let i = 0; i < cartData.length; i++) {
-            totalPrice=totalPrice + cartData.map((item) => item.Price)[i]*cartData.map((item) => item.quantity)[i];
-          }
-        
-        var total = document.getElementById('total')
-        total.textContent = totalPrice + ' VNĐ';
+            var totalPrice = 0;
+            for (let i = 0; i < cartData.length; i++) {
+                totalPrice = totalPrice + cartData.map((item) => item.Price)[i] * cartData.map((item) => item.quantity)[i];
+            }
+
+            var total = document.getElementById('subToTal')
+            total.textContent = "TỔNG CỘNG GIÁ TRỊ SẢN PHẨM: " + totalPrice + ' VNĐ';
         });
-        
+
         const SubToTalDiv = document.createElement('div');
         var itemSubToTal = document.createElement('p1');
-        itemSubToTal.textContent = item.Price*item.quantity;
-        
+        itemSubToTal.textContent = item.Price * item.quantity;
+
         var Button = document.createElement('button');
-        Button.setAttribute('id','deleteItem');
+        Button.setAttribute('id', 'deleteItem');
         Button.textContent = 'Xóa sản phẩm';
 
-        var totalPrice=0;
+        var totalPrice = 0;
         for (let i = 0; i < cartData.length; i++) {
-            totalPrice=totalPrice + cartData.map((item) => item.Price)[i]*cartData.map((item) => item.quantity)[i];
-          }
-        
-        var total = document.getElementById('total')
-        total.textContent = totalPrice + ' VNĐ';
+            totalPrice = totalPrice + cartData.map((item) => item.Price)[i] * cartData.map((item) => item.quantity)[i];
+        }
+
+        var total = document.getElementById('subToTal')
+        total.textContent = "TỔNG CỘNG GIÁ TRỊ SẢN PHẨM: " + totalPrice + ' VNĐ';
 
 
 
