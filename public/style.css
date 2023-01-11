@@ -455,7 +455,7 @@ table {
 }
 
 .searchBox input[type=text] {
-    width: 95%;
+    width: 90%;
     margin-bottom: 20px;
     padding: 12px;
     border: 1px solid rgb(0, 0, 0);
@@ -511,4 +511,24 @@ table {
 
 .storeBody #sellingFood button:hover {
     background-color: #FFA07A;
+}
+
+
+.storeBody .searchBox input:focus {
+    background-color: #f2f2f2;
+    border-color: #4CAF50;
+    outline: none; /* remove the default outline */
+}
+
+#searchButton{
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 3px;
+    color: #c23616;
+  }
+
+  #searchButton:hover {
+    background-color: var(--grey);
+    color: black    ;
 }
