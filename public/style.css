@@ -500,6 +500,37 @@ table {
     scale: 50%;
 }
 
+#sellingFood p {
+    margin-right: 6rem;
+}
+
+#sellingFood p1 {
+    margin-left: 7rem;
+}   
+
+#sellingFood button {
+    font-size: 25px;
+    margin: 0.5rem;
+    background: white;
+}
+
+
+#sellingFood div {
+    margin-left: 4rem;
+    font-size: 16px;
+}
+button#deleteItem {
+    margin-left: 6.5rem;
+    font-size: 16px;
+    background: rgb(228, 68, 68);
+    color: rgb(255, 255, 255);
+    float: right;
+    padding: 10px 20px;
+    border-radius: 7px;
+}
+
+
+
 .storeBody #sellingFood button {
     background-color: var(--red);
     font-size: 14px;
