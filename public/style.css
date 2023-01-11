@@ -455,7 +455,7 @@ table {
 }
 
 .searchBox input[type=text] {
-    width: 90%;
+    width: 82%;
     margin-bottom: 20px;
     padding: 12px;
     border: 1px solid rgb(0, 0, 0);
@@ -559,7 +559,20 @@ button#deleteItem {
     color: #c23616;
   }
 
-  #searchButton:hover {
+#searchButton:hover {
+    background-color: var(--grey);
+    color: black    ;
+}
+
+#sortButton{
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 3px;
+    color: #c23616;
+  }
+
+#sortButton:hover {
     background-color: var(--grey);
     color: black    ;
 }
