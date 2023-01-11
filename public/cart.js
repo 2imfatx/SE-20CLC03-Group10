@@ -5,7 +5,7 @@ function displayItems() {
        
     var cart=document.getElementById('cart')
 
-    const CartData=cartData;
+    var CartData=cartData;
     CartData.map(item=>{
 
         var itemCard=document.createElement('div');
@@ -19,31 +19,39 @@ function displayItems() {
         var itemName=document.createElement('p');
         itemName.textContent = item.StoreName;
 
-        var itemAddr=document.createElement('p');
-        itemAddr.textContent="Địa chỉ: " + item.Adress;
-
-        var itemDesc=document.createElement('p');
-        itemDesc.textContent="Mô tả: " +item.Description;
-
-        var itemRating=document.createElement('p');
-        itemRating.textContent="Đánh giá: " +item.Rating;
-
         var itemPrice=document.createElement('p');
         itemPrice.textContent="Giá cả: " +item.Price;
 
-        var Button = document.createElement('button');
-        Button.setAttribute('class','addToCart');
-        Button.textContent = 'Thêm vào giỏ hàng';
+        var itemQuantity = document.createElement('div');
+        itemQuantity.textContent = "Số lượng: " + item.quantity;
+        var incrementButton = document.createElement('button');
+        incrementButton.innerHTML = " + ";
+        incrementButton.addEventListener("click", () => {
+            item.quantity += 1;
+            itemQuantity.textContent = "Số lượng: " + item.quantity;
+        });
+        var decrementButton = document.createElement('button');
+        decrementButton.innerHTML = " - ";
+        decrementButton.addEventListener("click", () => {
+            if (item.quantity > 0) {
+                item.quantity -= 1;
+                itemQuantity.textContent = "Số lượng: " + item.quantity;
+                if (item.quantity === 0) {
+                    cart.removeChild(itemCard);
+                    
+                }
+            }
+        });
 
         itemCard.appendChild(itemImg);
         itemCard.appendChild(inforDiv);
         inforDiv.appendChild(itemName);
-        inforDiv.appendChild(itemAddr);
-        inforDiv.appendChild(itemDesc);
-        inforDiv.appendChild(itemRating);
         inforDiv.appendChild(itemPrice);
 
-        itemCard.appendChild(Button);
+        itemCard.appendChild(itemQuantity);
+        itemCard.appendChild(incrementButton);
+        itemCard.appendChild(decrementButton);
+        
 
         cart.appendChild(itemCard);
     })
