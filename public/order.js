@@ -72,22 +72,8 @@ function displayItems() {
         itemSubToTal.textContent = item.Price * item.quantity;
 
         var Button = document.createElement('button');
-        Button.setAttribute('id','deleteItem');
+        Button.setAttribute('id', 'deleteItem');
         Button.textContent = 'Xóa sản phẩm';
-        Button.addEventListener("click", () => {
-            const nameElement = Button.parentNode.querySelector('p:first-child');
-            const itemName = nameElement.textContent;
-            cartData = cartData.filter((item) => item.StoreName !== itemName);
-            localStorage.setItem('cart', JSON.stringify(cartData));
-            cart.removeChild(itemCard);
-            var totalPrice = 0;
-            for (let i = 0; i < cartData.length; i++) {
-                totalPrice = totalPrice + cartData.map((item) => item.Price)[i] * cartData.map((item) => item.quantity)[i];
-            }
-
-            var total = document.getElementById('subToTal')
-            total.textContent = totalPrice + ' VNĐ';
-        });
 
         totalPrice = 0
         for (let i = 0; i < cartData.length; i++) {

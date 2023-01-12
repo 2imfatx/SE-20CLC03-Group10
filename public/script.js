@@ -109,16 +109,4 @@ searchBox.addEventListener("keyup", function (event) {
     }
 });
 
-const sortButton = document.getElementById('sortButton');
-if(sortButton){
-    sortButton.addEventListener('click', sortByRating);
-}
-
-function sortByRating() {
-    const sortedData = ComGaStore.sort((a, b) => b.Rating - a.Rating);
-    const ComGa = document.getElementById('ComGa');
-    ComGa.innerHTML = '';
-    displayItems(sortedData);
-}
-
 displayItems();
